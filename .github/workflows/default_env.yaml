@@ -1,0 +1,16 @@
+name: Get all the ENVs for diff OS
+on:
+    workflow_dispatch: 
+jobs:
+    env_on_windows:
+        runs-on: windows-latest
+        steps:
+            - run: env
+    env_on_ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+            - run: env 
+    env_on_mac:
+        runs-on: macos-latest
+        steps: 
+            - run: env 
