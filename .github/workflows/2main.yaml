@@ -28,4 +28,4 @@ jobs:
             echo "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
-           echo "from joblevel: $Env:lov_env "
+           echo "from joblevel: ${{env.lov_env}} "
