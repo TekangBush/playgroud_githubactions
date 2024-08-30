@@ -21,11 +21,11 @@ jobs:
             name: enoh_step
             father: james_step   
           run: |
-            Write-Host "my name is ${{env.name}} and my father's name is: ${{env.father}}"
+            echo "my name is ${{env.name}} and my father's name is: ${{env.father}}"
         - name: To test job level env
           id: b
           run: |
-            Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
+            echo "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
            echo "from joblevel: $Env:lov_env "
