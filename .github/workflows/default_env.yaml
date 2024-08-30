@@ -7,7 +7,7 @@ jobs:
         steps:
             - run: env
             - run: |
-            Write-Host "I'm the github_actor: $Env:GITHUB_ACTOR"
+                Write-Host "I'm the github_actor: $Env:GITHUB_ACTOR"
 
     env_on_ubuntu:
         needs: [env_on_windows]
