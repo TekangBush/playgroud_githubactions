@@ -15,7 +15,7 @@ jobs:
         - name: global variable
           id: a
           run: |
-           echo "lov_env=p" >> "$GITHUB_ENV"
+           echo "lov_env=$name" >> "$GITHUB_ENV"
         - name: step variable
           env:
             name: enoh_step
@@ -28,4 +28,4 @@ jobs:
             Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
-           echo "${{ env.lov_env }}"
+           echo "from joblevel: ${{ env.lov_env }}"
