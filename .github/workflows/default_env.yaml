@@ -6,7 +6,7 @@ jobs:
         runs-on: windows-latest
         steps:
             - run: env
-            - run: Write-Host "$Env.GITHUB_ACTOR"
+            - run: Write-Host "$Env:GITHUB_ACTOR"
 
     env_on_ubuntu:
         needs: [env_on_windows]
