@@ -9,5 +9,4 @@ jobs:
         
         steps:
         - name: checkout action
-          uses: action/checkout@v3
-          
+          uses: actions/checkout@v3
