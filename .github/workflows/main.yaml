@@ -17,3 +17,25 @@ jobs:
             node-version: '20'
         # - name: run main.js 
         #   run : node main.js 
+    test:
+        needs: [build]
+        runs-on: windows-latest
+        steps:
+        - name: second checkout
+          uses: actions/checkout@v3
+        - name: run a script
+          uses: |
+            Write-Host "I love Jesus"
+            Write-Host "And I understand everything that i engage into"    
+            
+    stage:
+        needs: [build]
+        runs-on: windows-latest
+        steps:
+        - name: second checkout
+          uses: actions/checkout@v3
+        - name: run a script
+          run: |
+            Write-Host "I love Jesus"
+            Write-Host "And I understand everything that i engage into"
+    
