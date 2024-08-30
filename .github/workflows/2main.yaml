@@ -6,6 +6,9 @@ env:
     father: james
 jobs:
     mainJob:
+        env:
+            name: enoh_joblevel
+            father: james_joblevel
         name: Testing variables 
         runs-on: windows-latest
         steps:
@@ -18,3 +21,6 @@ jobs:
             father: james_step   
           run: |
             Write-Host "my name is ${{env.name}} and my father's name is: ${{env.father}}"
+        - name: To test job level env
+          run: |
+            Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
