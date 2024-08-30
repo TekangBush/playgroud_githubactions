@@ -1,0 +1,13 @@
+name: first github actions 
+
+on:
+    push:
+        branches: ["main"]
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: checkout action
+          uses: action/checkout@v3
+          
