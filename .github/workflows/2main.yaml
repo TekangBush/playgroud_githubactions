@@ -15,8 +15,7 @@ jobs:
         - name: global variable
           id: a
           run: |
-           Write-Host "my name is ${{env.name}} and my father's name is ${{env.father}}"
-           echo "lov=peace">> $GITHUB_ENV
+           echo "lov=peace" >> $GITHUB_ENV
         - name: step variable
           env:
             name: enoh_step
