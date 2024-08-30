@@ -10,7 +10,7 @@ jobs:
             name: enoh_joblevel
             father: james_joblevel
         name: Testing variables 
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps:
         - name: global variable
           id: a
@@ -28,4 +28,4 @@ jobs:
             Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
-           echo "from joblevel: $lov_env "
+           echo "from joblevel: $Env:lov_env "
