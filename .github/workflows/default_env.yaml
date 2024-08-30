@@ -16,3 +16,8 @@ jobs:
         runs-on: macos-latest
         steps: 
             - run: env 
+    env_on_macs:
+        needs: [env_on_windows]
+        runs-on: macos-11
+        steps: 
+            - run: env 
