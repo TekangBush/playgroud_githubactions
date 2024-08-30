@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: env 
-            - run: echo "the Github_Actor is ${{env.GITHUB_ACTOR}}"
+            - run: echo "the Github_Actor is $GITHUB_ACTOR"
 
     env_on_mac:
         needs: [env_on_windows,env_on_ubuntu]
