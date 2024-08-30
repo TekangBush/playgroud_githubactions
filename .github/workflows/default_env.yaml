@@ -7,10 +7,12 @@ jobs:
         steps:
             - run: env
     env_on_ubuntu:
+        needs: [env_on_windows]
         runs-on: ubuntu-latest
         steps:
             - run: env 
     env_on_mac:
+        needs: [env_on_windows,env_on_ubuntu]
         runs-on: macos-latest
         steps: 
             - run: env 
