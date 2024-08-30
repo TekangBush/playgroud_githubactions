@@ -1,0 +1,31 @@
+name: ENV_windows
+on:
+    workflow_dispatch: 
+env:
+    name: enoh
+    father: james
+jobs:
+    mainJob:
+        env:
+            name: enoh_joblevel
+            father: james_joblevel
+        name: Testing variables 
+        runs-on: windows-latest
+        steps:
+        - name: global variable
+          id: a
+          run: |
+           Add-Content -Path $env:GITHUB_ENV -Value "lov_env=$env:name"
+        - name: step variable
+          env:
+            name: enoh_step
+            father: james_step   
+          run: |
+            Write-Host "my name is ${{env.name}} and my father's name is: ${{env.father}}"
+        - name: To test job level env
+          id: b
+          run: |
+            Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
+        - name: use variable from inline script
+          run: |
+           Write-Host "from joblevel: $Env:lov_env"
