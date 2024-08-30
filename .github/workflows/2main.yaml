@@ -1,0 +1,20 @@
+name: ENVs
+on:
+    workflow_dispatch: 
+env:
+    name: enoh
+    father: james
+jobs:
+    mainJob:
+        name: Testing variables 
+        runs-on: windows-latest
+        steps:
+        - name: global variable
+          run: |
+           Write-Host "my name is ${{env.name}} and my father's name is ${{env.father}}"
+        - name: step variable
+          env:
+            name: enoh_step
+            father: james_step   
+          run: |
+            Write-Host "my name is ${{env.name}} and my father's name is: ${{env.father}}"
