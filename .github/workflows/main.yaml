@@ -10,3 +10,10 @@ jobs:
         steps:
         - name: checkout action
           uses: actions/checkout@v3
+        
+        - name: setup Node.Js
+          uses: actions/setup-node@v3
+          with: 
+            node-version: '20'
+        - name: run main.js 
+          run : node main.js 
