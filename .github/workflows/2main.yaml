@@ -28,4 +28,4 @@ jobs:
             Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
-           echo "$env:lov"
+           Write-Host "${{env.lov}}"
