@@ -10,22 +10,22 @@ jobs:
             name: enoh_joblevel
             father: james_joblevel
         name: Testing variables 
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
         - name: global variable
           id: a
           run: |
-           echo "lov_env=$name" >> "$GITHUB_ENV"
+           Write-Host "lov_env=$name" >> "$GITHUB_ENV"
         - name: step variable
           env:
             name: enoh_step
             father: james_step   
           run: |
-            echo "my name is ${{env.name}} and my father's name is: ${{env.father}}"
+            Write-Host "my name is ${{env.name}} and my father's name is: ${{env.father}}"
         - name: To test job level env
           id: b
           run: |
-            echo "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
+            Write-Host "my name is : ${{env.name}} and my father's name is : ${{env.father}}"
         - name: use variable from inline script
           run: |
-           echo "from joblevel: ${{env.lov_env}} "
+           Write-Host "from joblevel: ${{env.lov_env}} "
