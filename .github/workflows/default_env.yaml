@@ -7,7 +7,7 @@ jobs:
         steps:
             - run: env
             - run: |
-                Write-Host "I $Env:GITHUB_ACTOR is a dangerous github_actor"
+                Write-Host " $Env:GITHUB_ACTOR is the only dangerous github_actor"
 
     env_on_ubuntu:
         needs: [env_on_windows]
