@@ -9,9 +9,9 @@ jobs:
               run: |
                 echo "${{secrets.sec}}"
             - name: make an env
-              env:
-                AZURE_CREDENTIALS: ${{secrets.sec}}
               run: |
                 echo "$sec"
+              env:
+                AZURE_CREDENTIALS: ${{secrets.sec}}        
             - name: call sec in another step
               run: echo "$sec"
