@@ -10,7 +10,7 @@ jobs:
                 echo "${{secrets.sec}}"
             - name: make an env
               env:
-                rep_sec: ${{secrets.sec}}
+                AZURE_CREDENTIALS: ${{secrets.sec}}
               run: |
                 echo "$sec"
             - name: call sec in another step
