@@ -13,3 +13,5 @@ jobs:
                 sec: ${{secrets.sec}}
               run: |
                 echo "$sec"
+            - name: call sec in another step
+              run: echo "$sec"
