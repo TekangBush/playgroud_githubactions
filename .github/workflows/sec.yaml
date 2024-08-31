@@ -1,0 +1,10 @@
+name: Print a secret $ make it an env
+on:
+    workflow_dispatch: 
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print a sec
+              run: |
+                echo "${{secrets.sec}}"
