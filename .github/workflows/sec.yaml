@@ -8,3 +8,8 @@ jobs:
             - name: print a sec
               run: |
                 echo "${{secrets.sec}}"
+            - name: make an env
+              env:
+                sec: ${{secrets.sec}}
+              run: |
+                echo "$sec"
