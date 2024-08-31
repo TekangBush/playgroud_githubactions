@@ -14,4 +14,5 @@ jobs:
               env:
                 AZURE_CREDENTIALS: ${{secrets.sec}}        
             - name: call sec in another step
-              run: echo "$sec"
+              run: |
+                echo "$AZURE_CREDENTIALS"
