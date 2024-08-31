@@ -10,8 +10,8 @@ jobs:
                 echo "${{secrets.sec}}"
             - name: make an env
               env:
-                sec: ${{secrets.sec}}
+                rep_sec: ${{secrets.sec}}
               run: |
-                echo "$sec"
+                echo "$rep_sec"
             - name: call sec in another step
-              run: echo "$sec"
+              run: echo "$rep_sec"
