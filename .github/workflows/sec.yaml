@@ -12,6 +12,6 @@ jobs:
               env:
                 rep_sec: ${{secrets.sec}}
               run: |
-                echo "$rep_sec"
+                echo "$sec"
             - name: call sec in another step
-              run: echo "$rep_sec"
+              run: echo "$sec"
