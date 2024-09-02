@@ -60,6 +60,6 @@ jobs:
                 Add-Content -Path $env:GITHUB_ENV -Value $env
             - name : call the variable
               run: |
-                Write-Host "Liebchen means: ${{env:liebchen}}"
+                Write-Host "Liebchen means: $env:liebchen"
                 
          
