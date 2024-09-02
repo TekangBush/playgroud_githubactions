@@ -25,6 +25,6 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: drop
-                path: ./artifact
+                path: artifact.zip
             - name: Read the file 
-              run: Get-Content -Path ./artifact/artifact.zip
+              run: Get-Content -Path ./artifact.zip/artifact.zip
