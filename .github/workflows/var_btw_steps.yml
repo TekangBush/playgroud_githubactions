@@ -17,5 +17,15 @@ jobs:
                 Write-Host "::set-output name=made_var::I love Jesus Again"
             - name: Ref variable in subq steps
               run: |
-                Write-Host "First step created: var $env:test_var"
+                Write-Host "First step created var: $env:test_var"
                 Write-Host "made_var: ${{steps.key1.outputs.made_var}}"
+            - name: Let us do a new thing 
+              id: newTest
+              run: |
+                $output= "id_1=1"
+                Add-Content -Path $env:GITHUB_ENV -Value $output
+            - name: Get new id_i
+              run: |
+                 Write-Host "Find out if it worked"
+                 Write-Host " ID_1 is : ${{steps.newTest.outputs.id_1}}"
+                 Write-Host "Did it work?"
