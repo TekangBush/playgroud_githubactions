@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: create a local file
               run: |
-                Add-Content -Path ./artifact.zip -Value "created an artifact"
+                Add-Content -Path ./artifact.zip -Value "created an artifact marccelus t enoh"
             - name: Upload the local file
               uses: actions/upload-artifact@v4
               with:
