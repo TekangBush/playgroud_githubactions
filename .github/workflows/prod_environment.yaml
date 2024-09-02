@@ -8,6 +8,7 @@ jobs:
         name: Production Deployment
         environment: 
             name: Production
+            url: https://github.com
         runs-on: windows-latest
         steps:
             - name: Read the secret
