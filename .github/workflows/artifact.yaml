@@ -27,4 +27,4 @@ jobs:
                 name: file
                 # path: artifact.zip
             - name: Read the file 
-              run: Get-Content-Path ./artifact.zip
+              run: Get-Content -Path ./artifact.zip
