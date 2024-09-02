@@ -22,11 +22,11 @@ jobs:
             - name: Let us do a new thing 
               id: newTest
               run: |
-                $ou= "id_1=1"
+                $output= "id_1=1"
                 Add-Content -Path $env:GITHUB_ENV -Value $output
             - name: Get new id_i
               run: |
                  Write-Host "Find out if it worked"
-                 $I=${{steps.newTest.outputs.id_1}}"
+                 $I="${{steps.newTest.outputs.id_1}}"
                  Write-Host  $I
                  Write-Host "Did it work?"
