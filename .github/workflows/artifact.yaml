@@ -14,3 +14,13 @@ jobs:
               with:
                 name: file
                 path: artifact.zip
+    job_2:
+        name: Download Artifact
+        runs-on: windows-latest
+        steps:
+            - name: Download action
+              uses: actions/download-artifact@v2
+              with:
+                name: file
+            - name: Read the file 
+              run: Get-Content -Path ./artifact.zip
