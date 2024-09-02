@@ -23,7 +23,7 @@ jobs:
               id: newTest
               run: |
                 $output= "id_1=1"
-                Add-Content -Path $env:GITHUB_ENV -Value $output
+                Add-Content -Path $env:GITHUB_OUTPUT -Value $output
             - name: Get new id_i
               run: |
                  Write-Host "Find out if it worked"
@@ -34,7 +34,7 @@ jobs:
               id: newTesting
               run: |
                    $output= "id_1=1"
-                   Add-Content -Path $env:GITHUB_ENV -Value $output
+                   Add-Content -Path $env:GITHUB_OUTPUT -Value $output
               shell: pwsh
                
             - name: Geting new id_1
