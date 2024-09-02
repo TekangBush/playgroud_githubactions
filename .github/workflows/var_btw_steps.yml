@@ -28,5 +28,5 @@ jobs:
               run: |
                  Write-Host "Find out if it worked"
                  $I=${{steps.newTest.outputs.id_1}}"
-                 Write-Host " variable is  : $I"
+                 Write-Host  $I
                  Write-Host "Did it work?"
