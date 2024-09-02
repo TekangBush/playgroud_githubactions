@@ -20,7 +20,7 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: Download action
-              uses: actions/download-artifact@v2
+              uses: actions/download-artifact@v4
               with:
                 name: file
             - name: Read the file 
