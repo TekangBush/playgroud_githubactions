@@ -30,7 +30,7 @@ jobs:
                  $I="${{steps.newTest.outputs.id_1}}"
                  Write-Host  $I
                  Write-Host "Did it work?"
-            - name: Let us do a new thing 
+            - name: Let us do 
               id: newTesting
               run: |
                    $output= "id_1=1"
