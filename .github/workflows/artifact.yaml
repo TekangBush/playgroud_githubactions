@@ -24,7 +24,7 @@ jobs:
             - name: Download action
               uses: actions/download-artifact@v4
               with:
-                name: drop
+                name: dropp
                 path: ./Download  #the current directory to which the file will be downloaded to  
             - name: Read the file 
               run: Get-Content -Path ./Download/artifact.zip

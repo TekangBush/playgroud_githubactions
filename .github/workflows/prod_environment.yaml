@@ -1,0 +1,15 @@
+name: Deploying to specific environments
+on:
+    push:
+        branches: ["main"]
+    workflow_dispatch: 
+jobs:
+    job_1:
+        name: Production Deployment
+        environment: 
+            name: Production
+        runs-on: windows-latest
+        steps:
+            - name: Read the secret
+              run: |
+               Write-Host "The APP_PROD_SEC is ${{secrets.APP_PROD_SEC}}"
