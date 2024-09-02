@@ -1,0 +1,21 @@
+name: Experiment variables btw steps
+on:
+    push:
+        branches: ["main"]
+    workflow_dispatch: 
+jobs:
+    Variables:
+        runs-on: windows-latest
+        steps:
+            - name: make custom env variable
+              run: |
+                Write-Host "creating an environment variable"
+                Add-content -Path $env:GITHUB_ENV -Value "test_var=I love Jesus"
+            - name: create a variable
+              id: key1
+              run: |
+                Write-Host "::set-output name=made_var::I love Jesus Again"
+            - name: Ref variable in subq steps
+              run: |
+                Write-Host "First step created: var $env:test_var"
+                Write-Host "made_var: ${{steps.key1.outputs.made_var}}"
