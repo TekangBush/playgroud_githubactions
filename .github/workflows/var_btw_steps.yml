@@ -16,11 +16,13 @@ jobs:
               run: |
                 Write-Host "creating an environment variable"
                 Add-content -Path $env:GITHUB_ENV -Value "test_var=I love Jesus"
+
             - name: Let us do a new thing 
               id: newTest
               run: |
                 $output= "id_1=1"
                 Add-Content -Path $env:GITHUB_OUTPUT -Value $output
+
             - name: Let us do a new thing 
               id: revision
               run: |
@@ -49,5 +51,15 @@ jobs:
               run: |
                 Write-Host "recent variable: ${{needs.Variables.outputs.output2}}"
                 Write-Host "Well done ${{env.name}}"
+    GITHUB_ENV:
+        runs-on: windows-latest
+        steps:
+            - name: create a varaible 
+              run: |
+                $env= "liebchen=darling"
+                Add-Content -Path $env:GITHUB_ENV -Value $env
+            - name : call the variable
+              run: |
+                Write-Host "Liebchen means: $env:liebchen"
                 
          
