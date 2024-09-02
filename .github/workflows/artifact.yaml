@@ -1,5 +1,7 @@
 name: creating an artifact
 on: 
+    push:
+        branches: [main]
     workflow_dispatch: 
 jobs:
     job_1:
@@ -23,5 +25,6 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: file
+                path: ./artifact.zip
             - name: Read the file 
               run: Get-Content -Path ./artifact.zip
