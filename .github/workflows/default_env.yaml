@@ -3,6 +3,7 @@ on:
     workflow_dispatch: 
 jobs:
     env_on_windows:
+        name: widows  
         runs-on: windows-latest
         steps:
             - run: env
@@ -10,6 +11,7 @@ jobs:
                 Write-Host " $Env:GITHUB_ACTOR is the only dangerous github_actor"
 
     env_on_ubuntu:
+        name: ubuntu
         needs: [env_on_windows]
         runs-on: ubuntu-latest
         steps:
@@ -17,12 +19,14 @@ jobs:
             - run: echo "the Github_Actor is $GITHUB_ACTOR"
 
     env_on_mac:
+        name: mac
         needs: [env_on_windows,env_on_ubuntu]
         runs-on: macos-latest
         steps: 
             - run: env 
 
     env_on_macs:
+        name: mac_again
         needs: [env_on_windows]
         runs-on: windows-latest
         steps: 
