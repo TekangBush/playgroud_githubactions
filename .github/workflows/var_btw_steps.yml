@@ -3,6 +3,8 @@ on:
     push:
         branches: ["main"]
     workflow_dispatch: 
+env:
+    name: "Marccelus T. Enoh"
 jobs:
     Variables:
         runs-on: windows-latest
@@ -46,5 +48,6 @@ jobs:
             - name: Get the other output
               run: |
                 Write-Host "recent variable: ${{needs.Variables.outputs.output2}}"
+                Write-Host "Well done ${{env.name}}"
                 
          
