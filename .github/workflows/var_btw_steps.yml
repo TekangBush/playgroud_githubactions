@@ -8,6 +8,7 @@ jobs:
         runs-on: windows-latest
         outputs:
             output1: ${{steps.newTest.outputs.id_1}}
+            output2: ${{steps.revision.outputs.output}}
         steps:
             - name: make custom env variable
               run: |
@@ -18,6 +19,12 @@ jobs:
               run: |
                 $output= "id_1=1"
                 Add-Content -Path $env:GITHUB_OUTPUT -Value $output
+            - name: Let us do a new thing 
+              id: revision
+              run: |
+                  $output= "id_1=19"
+                  Add-Content -Path $env:GITHUB_OUTPUT -Value $output
+            
             - name: Get new id_i
               run: |
                  Write-Host "Find out if it worked"
@@ -32,5 +39,12 @@ jobs:
               run: |
                  $M= "${{needs.Variables.outputs.output1}}"
                  Write-Host "the value of M is $M"
+    var_next2:
+        needs: [Variables,var_next]
+        runs-on: windows-latest
+        steps:
+            - name: Get the other output
+              run: |
+                Write-Host "recent variable: ${{needs.Variables.outputs.output2}}"
                 
          
