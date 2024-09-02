@@ -10,7 +10,7 @@ jobs:
               run: |
                 Add-Content -Path ./artifact.zip -Value "created an artifact"
             - name: Upload the local file
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v2
               with:
                 name: file
                 path: artifact.zip
@@ -20,7 +20,7 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: Download action
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@2
               with:
                 name: file
             - name: Read the file 
