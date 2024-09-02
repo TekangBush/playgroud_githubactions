@@ -6,6 +6,8 @@ on:
 jobs:
     Variables:
         runs-on: windows-latest
+        outputs:
+            output1: ${{steps.newTest.outputs.id_1}}
         steps:
             - name: make custom env variable
               run: |
@@ -30,4 +32,13 @@ jobs:
                  $I="${{steps.newTest.outputs.id_1}}"
                  Write-Host " this is the value of I: $I"
                  Write-Host "Did it work?"
+    var_next:
+        needs: [Variables]
+        runs-on: windows-latest
+        steps:
+            - name: Get variable
+              run: |
+                 $M= "${{needs.Variables.outputs.output1}}"
+                 Write-Host "the value of M is $M"
+                
          
