@@ -50,7 +50,7 @@ jobs:
             - name: Get the other output
               run: |
                 Write-Host "recent variable: ${{needs.Variables.outputs.output2}}"
-                Write-Host "Well done $env.name"
+                Write-Host "Well done ${{env.name}}"
     GITHUB_ENV:
         runs-on: windows-latest
         steps:
@@ -60,6 +60,6 @@ jobs:
                 Add-Content -Path $env:GITHUB_ENV -Value $env
             - name : call the variable
               run: |
-                Write-Host "Liebchen means: $env:liebchen"
+                Write-Host "Liebchen means: ${{env:liebchen}}"
                 
          
