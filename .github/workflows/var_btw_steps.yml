@@ -30,3 +30,17 @@ jobs:
                  $I="${{steps.newTest.outputs.id_1}}"
                  Write-Host  $I
                  Write-Host "Did it work?"
+            - name: Let us do a new thing 
+              id: newTesting
+              run: |
+                   $output= "id_1=1"
+                   Add-Content -Path $env:GITHUB_ENV -Value $output
+              shell: pwsh
+               
+            - name: Geting new id_1
+              run: |
+                   Write-Host "Find out if it worked"
+                   $I=$env:id_1
+                   Write-Host  "The value of id_1 is: $I"
+                   Write-Host "Did it work?"
+              shell: pwsh           
