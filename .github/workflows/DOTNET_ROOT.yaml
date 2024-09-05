@@ -1,0 +1,58 @@
+name: Demonstrate DOTNET_ROOT Behavior
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: 
+
+jobs:
+  build-and-run-windows:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up .NET SDK on Windows
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '7.0.x'
+
+    - name: Display .NET SDK location on Windows
+      run: |
+        Write-Host "Checking installed .NET SDKs:"
+        dotnet --list-sdks
+        Write-Host "DOTNET_ROOT is set to: $env:DOTNET_ROOT"
+
+    # - name: Run .NET Application on Windows
+    #   run: |
+    #     dotnet run --project ./MyApp
+
+  build-and-run-ubuntu:
+    needs: build-and-run-windows
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up .NET SDK on Ubuntu
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '7.0.x'
+
+    - name: Display .NET SDK location on Ubuntu
+      run: |
+        echo "Checking installed .NET SDKs:"
+        dotnet --list-sdks
+        echo "DOTNET_ROOT is set to: $DOTNET_ROOT"
+
+    - name: Set DOTNET_ROOT on Ubuntu
+      run: |
+        export DOTNET_ROOT=$(pwd)/custom_dotnet_root
+        echo "DOTNET_ROOT is set to: $DOTNET_ROOT"
+        dotnet run --project ./MyApp
+
+    # - name: Run .NET Application on Ubuntu without DOTNET_ROOT
+    #   run: |
+    #     echo "Unsetting DOTNET_ROOT to use global installation"
+    #     unset DOTNET_ROOT
+    #     dotnet run --project ./MyApp
