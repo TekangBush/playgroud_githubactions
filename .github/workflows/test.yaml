@@ -17,7 +17,7 @@ jobs:
         id: artifact-upload-step
         with:
           name: my-artifact
-          path: ./mytests.zip
+          path: ./mytest.zip
           if-no-files-found: error
   job2:
     runs-on: ubuntu-latest
