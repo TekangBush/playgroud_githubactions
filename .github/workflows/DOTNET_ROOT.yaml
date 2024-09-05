@@ -49,7 +49,7 @@ jobs:
       run: |
         export DOTNET_ROOT=$(pwd)/custom_dotnet_root
         echo "DOTNET_ROOT is set to: $DOTNET_ROOT"
-        dotnet run --project ./MyApp
+        #dotnet run --project ./MyApp
 
     # - name: Run .NET Application on Ubuntu without DOTNET_ROOT
     #   run: |
