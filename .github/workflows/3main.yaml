@@ -15,7 +15,7 @@ jobs:
         - name: global variable
           id: a
           run: |
-           Add-Content -Path $env:GITHUB_ENV -Value "lov_env=will you marry me?"
+           Add-Content -Path $env:GITHUB_ENV -Value "lov_env=will you make it work?"
         - name: step variable
           env:
             name: enoh_step
